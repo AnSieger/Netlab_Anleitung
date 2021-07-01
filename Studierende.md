@@ -10,6 +10,6 @@ Füllen Sie bitte dieses [Formular]() aus und senden es an die E-Mail-Adresse�
 
 Nachdem Sie von uns eine Bestätigung per E-Mail erhalten haben, stehen ihnen Ressourcen auf dem Cluster zu Verfügung. Melden sich dich mit ihren Unix-Zugangsdaten (z.B. mmuster2s) bei [Rancher](https://rancher.docklab.de/login) an .
 
-![login](res\rancher_start.png)
+![login][res\rancher_start.png]
 
 *Abbildung: Beispielhafter Login-Vorgang
