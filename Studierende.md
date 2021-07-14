@@ -71,7 +71,7 @@ spec:
     kind: Issuer
 ```
 
-Nachdem Sie den YAML Text importiert habe, wird ein Zertifikat erzeugt. Dies kann eine Minute dauern. Anschließen wird das Zertifikat als Secret im Namespace angelegt. Sollte kein Zertifikat erzeugt werden, suche sie nach den Ressourcen `certificaterequest`,`order` und `challenges` um Hinweise für den Grund zu bekommen.
+Nachdem Sie den YAML Text importiert habe, wird ein Zertifikat erzeugt. Dies kann eine Minute dauern. Anschließen wird das Zertifikat als Secret im Namespace angelegt. Sollte kein Zertifikat erzeugt werden, suche sie nach den Ressourcen `certificaterequest`,`order` und `challenges` um Hinweise auf den Grund zu bekommen.
 
 ### 3. Zertifikat auf Webdienst anwenden
 
