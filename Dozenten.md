@@ -14,12 +14,12 @@ Durch das Klicken auf`Add Project` können Sie ein eines Projekt anlegen.
 
 2. Fügen Sie den Studenten mit der Gruppe `Studenten Projekt` hinzu.
 
-3. Setzen Sie ein Limit für die Kubernetes Ressourcen
-   
-   | Empfohlen                         | CPU Lim. | CPU Res. | RAM Lim. | RAM Res. | Storage |
-   | --------------------------------- | -------- | -------- | -------- | -------- | ------- |
-   | Let's Encrypt Zertifikat erzeugen | 1100     | 1100     | 1100     | 1100     | -       |
-   | Wordpress                         | 1100     | 1100     | 1100     | 1100     | 20      |
+3. Setzen Sie ein Limit für die Kubernetes Ressourcen fest. 
+
+| Richtwerte für                    | CPU Lim.        | RAM Lim. | Storage |
+| --------------------------------- | --------------- | -------- | ------- |
+| Let's Encrypt Zertifikat erzeugen | 1100 milli CPUs | 1100 MiB | -       |
+| Wordpress                         | 1100 milli CPUs | 1100     | 20 GB   |
 
 | **Kontingentbezeichnung**          | **Beschreibung**                                           |
 | ---------------------------------- | ---------------------------------------------------------- |

@@ -4,25 +4,25 @@ Die Netzlabore stellen den Studierenden im Rahmen von Projekten, Übungen und Ab
 
 ## Beantragung von einem Namespace auf dem Cluster
 
-Füllen Sie bitte dieses [Formular]() aus und senden es an die E-Mail-Adresse [netlab@inf.h-brs.de](mailto:netlab@inf.h-brs.de). Sobald wir ihren Namespace erstellt haben, senden wir Ihnen alle weiteren Informationen per E-Mail zu. 
+Füllen Sie bitte dieses [Formular]() aus und senden es an die E-Mail-Adresse [netlab@inf.h-brs.de](mailto:netlab@inf.h-brs.de). Alle weiteren Informationen senden wir Ihnen per E-Mail zu. 
 
 ---
 
 ## Nutzung vom Cluster
 
-Nachdem Sie von uns eine Bestätigung per E-Mail erhalten haben, stehen Ihnen Ressourcen auf dem Cluster zur Verfügung. Melden sich dich mit ihren Unix-Zugangsdaten (z.B. mmuster2s) bei [Rancher](https://rancher.docklab.de/login) an.
+Nachdem Sie von uns eine Bestätigung per E-Mail erhalten haben, stehen Ihnen Ressourcen auf dem Cluster zur Verfügung. Melden sich dich mit Ihren Unix-Zugangsdaten (z.B. mmuster2s) bei [Rancher](https://rancher.docklab.de/login) an.
 
 ![login](res/rancher_start.png)
 
 *Abbildung: Beispielhafter Login-Vorgang
 
-Anschließend habe Sie Möglichkeit in Ihrem Projekt Namespaces anzulegen und Container zu betreiben. Der Projektname ist dabei ihr Benutzerkürzel (z.B. mmuster2s).
+Anschließend habe Sie Möglichkeit in Ihrem Projekt Namespaces anzulegen und Container zu betreiben. Der Projektname ist dabei Ihr Benutzerkürzel (z.B. mmuster2s).
 
 ---
 
 ## Let's Encypt Zertifikat erstellen
 
-Über den Dienst `cert-manager` haben Sie die Möglichkeit eigene Let's Encypt Zertifikate für Ihre Webanwendungen zu erzeugen. Als Voraussetzung benötigen Sie eine eigene Internetdomain.
+Über den Dienst `cert-manager` haben Sie die Möglichkeit eigene Let's Encypt Zertifikate für Ihre Webanwendungen zu erzeugen. Als Voraussetzung benötigen Sie eine Internetdomain. Als DNS Eintrag muss die lPv4-Adresse von einem Clusterknoten angegeben werden. 
 
 ### 1. Zertifikatsinformationen hinterlegen
 
@@ -30,7 +30,7 @@ Anschließend habe Sie Möglichkeit in Ihrem Projekt Namespaces anzulegen und Co
 
 ![login](res/LetsEncrypt_S1.png)
 
-Anschließend kopieren Sie den Text aus der Codebox in den YAML Editor und ersetzen das Attribut<E-MAIL> durch Ihre eigene E-Mail-Adresse. Diese E-Mail-Adresse wird benutzt, um das Zertifikat bei Let's Encrypt zu erzeugen. 
+Anschließend kopieren Sie den Text aus der Codebox in den YAML Editor und ersetzen das Attribut<E-MAIL> durch Ihre eigene E-Mail-Adresse. Diese E-Mail-Adresse wird benutzt, um das Zertifikat bei Let's Encrypt zu erzeugen. Anschließend importieren Sie den YAML Text.
 
 ```
 apiVersion: cert-manager.io/v1
@@ -71,8 +71,8 @@ spec:
     kind: Issuer
 ```
 
-Nachdem Sie den YAML Text importiert habe, wird ein Zertifikat erzeugt. Dies kann eine Minute dauern. Anschließen wird das Zertifikat als Secret im Namespace angelegt. Sollte kein Zertifikat erzeugt werden, suche sie nach den Ressourcen `certificatrequest`,`order` und `challenges` um Hinweise für den Grund zu bekommen.
+Nachdem Sie den YAML Text importiert habe, wird ein Zertifikat erzeugt. Dies kann eine Minute dauern. Anschließen wird das Zertifikat als Secret im Namespace angelegt. Sollte kein Zertifikat erzeugt werden, suche sie nach den Ressourcen `certificaterequest`,`order` und `challenges` um Hinweise für den Grund zu bekommen.
 
 ### 3. Zertifikat auf Webdienst anwenden
 
-Das Zertifikat müssen Sie nun in der Ingress Ressource hinterlegen.
+Das Zertifikat müssen Sie nun in der Ingress Ressource hinterlegen. Wenn bei der Eingabemaske von der Ingress Ressouce nach einem Wert für das Zertifikat verlangt wird, nehmen Sie eine beliebige Zeichenfolge.
