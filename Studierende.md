@@ -75,4 +75,4 @@ Nachdem Sie den YAML Text importiert habe, wird ein Zertifikat erzeugt. Dies kan
 
 ### 3. Zertifikat auf Webdienst anwenden
 
-Das Zertifikat müssen Sie nun in der Ingress Ressource hinterlegen. Wenn bei der Eingabemaske von der Ingress Ressouce nach einem Wert für das Zertifikat verlangt wird, nehmen Sie eine beliebige Zeichenfolge.
+Das Zertifikat müssen Sie nun in der Ingress Ressource hinterlegen. Wenn bei der Eingabemaske von der Ingress Ressource nach einem Wert für das Zertifikat verlangt wird, nehmen Sie eine beliebige Zeichenfolge.
